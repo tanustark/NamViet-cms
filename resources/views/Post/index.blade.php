@@ -18,7 +18,7 @@
             <div class="page-wrapper">
                 <div class="jumbotron">
                     <h1>Recent Posts</h1>
-                    <p>All of your recent posts go here</p>
+                    <p>All of recent posts go here</p>
                 </div>
                     @foreach($posts as $post)
                             <div class="panel panel-default">

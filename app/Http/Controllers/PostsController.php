@@ -79,4 +79,10 @@ class PostsController extends Controller
     public function delete(){
     }
 
+    public function myposts(){
+        $user=User::first();
+        $posts = Post::all()->sortByDesc('$id');
+        return view('Post.my-post',compact('posts','user'));
+    }
+
 }
