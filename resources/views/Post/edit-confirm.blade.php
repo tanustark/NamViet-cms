@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Create New Post
+    Confirmation
 @endsection
 
 @section('top-navbar')
