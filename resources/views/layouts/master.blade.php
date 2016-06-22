@@ -16,13 +16,14 @@
         <div class="top-navbar">
             @yield('top-navbar')
         </div>
+        <div class="row">
+            <div class="left-navbar col-lg-2">
+                @yield('left-navbar')
+            </div>
 
-        <div class="left-navbar">
-            @yield('left-navbar')
-        </div>
-
-        <div class="content">
-            @yield('content')
+            <div class="content col-lg-10">
+                @yield('content')
+            </div>
         </div>
 
         <div class="footer">

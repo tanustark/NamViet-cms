@@ -23,7 +23,7 @@
             @foreach($posts as $post)
                 <div class="manage-button" style="float: right; padding: 10px">
                     <a href="/posts/edit/{{ $post->id }}" class="btn btn-primary" role="button" >Edit</a>
-                    <button onclick="deleteButtonPressed()" class="btn btn-danger">Delete</button>
+                    <button onclick="deleteButtonPressed({{ $post->id }})" class="btn btn-danger">Delete</button>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">{{ $post->title }}</div>

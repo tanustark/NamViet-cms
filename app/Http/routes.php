@@ -25,7 +25,7 @@ Route::group(['prefix' => 'posts'], function(){
     Route::get('manage', 'PostsController@manage');
     Route::post('{postID}/update', 'PostsController@update');
     Route::get('edit/{postID}', 'PostsController@edit');
-    Route::get('delete', 'PostsController@delete');
+    Route::get('delete/{postID}', 'PostsController@delete');
     //Route::get('edit-confirm', 'PostsController@editConfirm');
     Route::get('myposts', 'PostsController@myposts');
     Route::get('{postID}', 'PostsController@show');

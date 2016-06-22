@@ -76,7 +76,10 @@ class PostsController extends Controller
         return view('Post.confirmation', compact('posts', 'user'));
     }
 
-    public function delete(){
+    public function delete($postID){
+        $post=Post::find($postID);
+        $post->delete();
+        return back();
     }
 
     public function myposts(){
