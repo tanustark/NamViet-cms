@@ -14,7 +14,7 @@
 
 @section('content')
     <div class="container">
-        <div class="col-md-10">
+        <div class="col-lg-9 container">
             <div class="page-wrapper">
                 <div class="page-header" style="text-align: center">
                     <h1>Edit Your Post</h1>

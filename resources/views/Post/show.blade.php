@@ -14,14 +14,14 @@
 
 @section('content')
     <div class="container">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-lg-9 container">
             <div class="page-wrapper">
                     <h1 class="page-header">{{ $post->title }}</h1>
-                    <p style="border-bottom: medium; font-weight: bold">published at: {{ $post->created_at }}</p>
-                <div class="row">
-                    <div>
-                        <p id="post-body-full">{{ $post->body }}</p>
-                    </div>
+                        <div class="author">Posted by: {{ $user->fullname }} &nbsp;&nbsp;&nbsp;Published at: {{ $post->created_at }}</div><hr>
+                        <div class="row">
+                            <div>
+                                <p id="post-body-full">{{ $post->body }}</p>
+                            </div>
 
                 </div>
             </div>

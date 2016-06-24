@@ -14,7 +14,7 @@
 
 @section('content')
     <div class="container">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-lg-9 container">
             <div class="page-wrapper">
                 <div class="jumbotron">
                     <h1>Your Posts</h1>
@@ -27,7 +27,7 @@
                     </div>
                     @if($post->user_id = 1)
                     <div class="panel panel-default">
-                        <div class="panel-heading"><a href="posts/{{ $post->id }}">{{ $post->title }}</a></div>
+                        <div class="panel-heading"><a href="myposts/{{ $post->id }}">{{ $post->title }}</a></div>
                         <div class="author">Posted by: {{ $user->fullname }} &nbsp;&nbsp;&nbsp;Published at: {{ $post->created_at }}</div><hr>
                         <p class="panel-body">
                             {{ $post->body }}

@@ -14,8 +14,9 @@ class PostsController extends Controller
 
 
     public function show($postID){
+        $user = User::first();
         $post = Post::find($postID);
-        return view('Post.show', compact('post'));
+        return view('Post.show', compact('post','user'));
     }
 
     public function index(User $user){
@@ -88,4 +89,24 @@ class PostsController extends Controller
         return view('Post.my-post',compact('posts','user'));
     }
 
+    public function showmypost($postID){
+        $user=User::first();
+        $post = Post::find($postID);
+        return view('Post.showmypost', compact('post','user'));
+    }
+
+    public function editmypost($postID){
+        $post = Post::find($postID);
+        return view('Post.editmypost', compact('post'));
+    }
+
+    public function updatemypost(Request $request, Post $post, $postID){
+        $post=Post::find($postID);
+        $user = User::first();
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->save();
+        $user->load('posts.comments');
+        return view('Post.confirmation', compact('posts', 'user'));
+    }
 }
