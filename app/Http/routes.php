@@ -26,17 +26,14 @@ Route::group(['prefix' => 'posts'], function(){
     Route::post('{postID}/update', 'PostsController@update');
     Route::get('edit/{postID}', 'PostsController@edit');
     Route::get('delete/{postID}', 'PostsController@delete');
-    //Route::get('edit-confirm', 'PostsController@editConfirm');
+    Route::get('edit-confirm', 'PostsController@editConfirm');
     Route::get('myposts', 'PostsController@myposts');
     Route::get('myposts/{postID}', 'PostsController@showmypost');
     Route::get('myposts/edit/{postID}', 'PostsController@editmypost');
     Route::get('myposts/{postID}/update', 'PostsController@updatemypost');
     Route::get('{postID}', 'PostsController@show');
-
-
-
-
 });
 
+Route::auth();
 
-
+Route::get('/dashboard', 'DashboardController@index');

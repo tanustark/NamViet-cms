@@ -25,16 +25,16 @@
                         <a href="/posts/edit/{{ $post->id }}" class="btn btn-primary" role="button" >Edit</a>
                         <button onclick="deleteButtonPressed({{ $post->id }})" class="btn btn-danger">Delete</button>
                     </div>
-                    @if($post->user_id = 1)
                     <div class="panel panel-default">
-                        <div class="panel-heading"><a href="myposts/{{ $post->id }}">{{ $post->title }}</a></div>
+                        <div class="panel-heading" id="post-heading">{{ $post->title }}</div>
                         <div class="author">Posted by: {{ $user->fullname }} &nbsp;&nbsp;&nbsp;Published at: {{ $post->created_at }}</div><hr>
-                        <p class="panel-body">
-                            {{ $post->body }}
-                        </p>
+                        <p class="panel-body" id="post-body">{{ $post->body }}</p>
                     </div>
-                    @endif
                 @endforeach
+                    </div>
+
+
+
             </div>
         </div>
     </div>

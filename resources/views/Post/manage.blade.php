@@ -26,9 +26,9 @@
                     <button onclick="deleteButtonPressed({{ $post->id }})" class="btn btn-danger">Delete</button>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{ $post->title }}</div>
-                    <div class="author">Posted by: {{ $user->fullname }} &nbsp;&nbsp;&nbsp;Published at: {{ $post->created_at }}</div><hr>
-                    <p class="panel-body">{{ $post->body }}</p>
+                    <div class="panel-heading" id="post-heading">{{ $post->title }}</div>
+                    <div class="author">Posted by: {{ $post->users->fullname }} &nbsp;&nbsp;&nbsp;Published at: {{ $post->created_at }}</div><hr>
+                    <p class="panel-body" id="post-body">{{ $post->body }}</p>
                 </div>
             @endforeach
             </div>

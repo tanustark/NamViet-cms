@@ -1,4 +1,4 @@
-<nav class="navbar navbar-fixed-top top-navbar">
+<nav class="navbar navbar-fixed-top navbar-default">
     <div class="container">
         <div class="navbar-header">
 
@@ -10,27 +10,18 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" style="color: white" href="{{ url('/') }}">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 Nam Viet CMS
             </a>
         </div>
 
         <div class="collapse navbar-collapse">
             {{--Left side of navbar--}}
-            <ul class="nav navbar-nav" >
+            <ul class="nav navbar-nav">
                 <li>
-                    @if(Auth::check())
-                            @if(Auth::user()->isAdmin == true)
-                                    <a style="color: white" href="#"><i class="fa fa-fw fa-user"></i>&nbsp;Administrator</a>
-                            @else
-                            <a style="color: white" href="#"><i class="fa fa-fw fa-user"></i>&nbsp;Staff</a>
-                            @endif
-                        @else
-                    <a href="{{ url('/login') }}">Dashboard</a>
-                        @endif
+                    <a href="{{ url('/dashboard') }}">Dashboard</a>
                 </li>
             </ul>
-
             {{--Right side of navbar--}}
             <ul class="nav navbar-nav navbar-right">
                 {{-- Authentication--}}
@@ -51,7 +42,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="/profile"><i class="fa fa-btn fa-user"></i>
-                                     Profile
+                                    Profile
                                 </a>
                             </li>
                             <li>
@@ -61,7 +52,7 @@
                             </li>
                         </ul>
                     </li>
-                    @endif
+                @endif
             </ul>
         </div>
     </div>

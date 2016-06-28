@@ -22,9 +22,9 @@
                 </div>
                     @foreach($posts as $post)
                             <div class="panel panel-default">
-                                <div class="panel-heading"><a href="posts/{{ $post->id }}">{{ $post->title }}</a></div>
-                                <div class="author">Posted by: {{ $user->fullname }} &nbsp;&nbsp;&nbsp;Published at: {{ $post->created_at }}</div><hr>
-                                <p class="panel-body">
+                                <div class="panel-heading" id="post-heading"><a href="posts/{{ $post->id }}">{{ $post->title }}</a></div>
+                                <div class="author">Posted by: {{ $post->users->fullname }} &nbsp;&nbsp;&nbsp;Published at: {{ $post->created_at }}</div><hr>
+                                <p class="panel-body" id="post-body">
                                     {{ $post->body }}
                                 </p>
                             </div>

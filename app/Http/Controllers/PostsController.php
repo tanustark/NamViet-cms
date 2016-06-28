@@ -5,12 +5,19 @@ namespace App\Http\Controllers;
 use DB;
 use App\Post;
 use App\User;
+use Hamcrest\Type\IsBoolean;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
+
+    public  function __construct()
+    {
+        $this->middleware('auth');
+    }
 
 
     public function show($postID){
@@ -20,13 +27,15 @@ class PostsController extends Controller
     }
 
     public function index(User $user){
-        $user=User::first();
+        $user=User::all();
         $posts = Post::all()->sortByDesc('id');
         //$posts->load('users.comments');
-        $user->load('posts.comments'); //must bind user who logged
+        $user->load('posts.comments');
+        $posts->load('users');//must bind user who logged
         //$posts=Post::with('users.comments')->find(1);
         return view('Post.index', compact('posts', 'user'));
-        //return $posts;
+
+
         //return $user;
 
     }
@@ -36,12 +45,12 @@ class PostsController extends Controller
     }
 
     public function confirmation(Request $request){
-        $user = User::first();
+        $user = Auth::user();
         $posts = new Post([
             'title' => $request->title,
             'body' => $request->body,
             'user_id' => $user->id,
-            'imgPath' => './assets/img/1.png'
+            'imgPath' => ''
         ]);
         //$posts=Post::with('users.comments')->find(8);
         $posts->save();
@@ -51,9 +60,11 @@ class PostsController extends Controller
     }
 
     public function manage(){
-        $user=User::first();
+        $user=User::all();
         $posts = Post::all()->sortByDesc('id');
-        $user->load('posts.comments'); //must bind user who logged
+        //$posts->load('users.comments');
+        $user->load('posts.comments');
+        $posts->load('users');//must bind user who logged
         return view('Post.manage', compact('posts', 'user'));
     }
 
@@ -69,7 +80,7 @@ class PostsController extends Controller
 
     public function update(Request $request, Post $post, $postID){
         $post=Post::find($postID);
-        $user = User::first();
+        $user = Auth::user();
             $post->title = $request->title;
             $post->body = $request->body;
         $post->save();
@@ -83,10 +94,14 @@ class PostsController extends Controller
         return back();
     }
 
-    public function myposts(){
-        $user=User::first();
-        $posts = Post::all()->sortByDesc('$id');
-        return view('Post.my-post',compact('posts','user'));
+    public function myposts()
+    {
+        $user = Auth::user();
+        $posts = DB::table('posts')->where('user_id', $user->id)->orderBy('id','desc')->get();
+        //$user->load('posts.comments');
+        //$posts->load('users');
+        //$posts = Post::all();
+        return view('Post.my-post', compact('posts','user'));
     }
 
     public function showmypost($postID){
