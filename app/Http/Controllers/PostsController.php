@@ -105,7 +105,7 @@ class PostsController extends Controller
     }
 
     public function showmypost($postID){
-        $user=User::first();
+        $user=Auth::user();
         $post = Post::find($postID);
         return view('Post.showmypost', compact('post','user'));
     }
@@ -117,7 +117,7 @@ class PostsController extends Controller
 
     public function updatemypost(Request $request, Post $post, $postID){
         $post=Post::find($postID);
-        $user = User::first();
+        $user = Auth::user();
         $post->title = $request->title;
         $post->body = $request->body;
         $post->save();

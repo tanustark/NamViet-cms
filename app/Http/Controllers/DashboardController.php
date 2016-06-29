@@ -34,7 +34,7 @@ class DashboardController extends Controller
         $user = Auth::user();
         $users = User::all();
         $tasks = Task::all();
-        $tasks_done = DB::table('tasks')->where('isDone','true')->count();
+        $tasks_done = DB::table('tasks')->where('isDone','1')->count();
         return view('dashboard', compact('user', 'items', 'users', 'tasks', 'tasks_done'));
         //return $tasks_done;
     }

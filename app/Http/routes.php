@@ -37,3 +37,11 @@ Route::group(['prefix' => 'posts'], function(){
 Route::auth();
 
 Route::get('/dashboard', 'DashboardController@index');
+
+Route::group(['prefix' => 'tasks'], function(){
+    Route::get('', 'TasksController@index');
+    Route::post('/confirm', 'TasksController@confirm');
+    Route::get('/manage', 'TasksController@manage');
+    Route::get('delete/{taskID}','TasksController@delete');
+    Route::post('update/{taskID}', 'TasksController@update');
+});

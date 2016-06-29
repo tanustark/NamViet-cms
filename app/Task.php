@@ -10,10 +10,12 @@ class Task extends Model
         'taskName',
         'taskBody',
         'deadline',
-        'assignedTo'
+        'assignedTo',
+        'startDate',
+        'endDate'
     ];
 
     public function users(){
-        $this->belongsTo(User::class, 'assignedTo');
+        return $this->belongsTo(User::class, 'assignedTo');
     }
 }

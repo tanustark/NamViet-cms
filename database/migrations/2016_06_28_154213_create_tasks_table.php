@@ -17,7 +17,8 @@ class CreateTasksTable extends Migration
             $table->integer('assignedTo')->unsigned();
             $table->string('taskName');
             $table->text('taskBody');
-            $table->dateTime('deadline');
+            $table->date('startDate');
+            $table->date('endDate');
             $table->boolean('isDone');
             $table->timestamps();
         });

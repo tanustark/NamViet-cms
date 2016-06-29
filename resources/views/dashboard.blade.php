@@ -67,7 +67,7 @@
         <div class="col-sm-4 panel panel-default" style="float: left" id="tasks-count">
             <ul class="list-inline">
             <div class="col-sm-6">
-                    <li style="font-size: 14pt; text-align: left; padding: 10px"><i class="fa fa-fw fa-tasks"></i> Tasks</li>
+                    <li style="font-size: 14pt; text-align: left; padding: 10px"><a href="/tasks" style="color: #000;"><i class="fa fa-fw fa-tasks"></i> Tasks</a></li>
                     <br><br>
                     <li style="font-size: 10pt; text-align: left; padding: 10px">Done:<span style="padding-left: 20px; color: #2ca02c">{{ $tasks_done }}</span><br>Total<span style="padding-left: 27px; color: #2ca02c">{{ $tasks->count() }}</span></li>
             </div>

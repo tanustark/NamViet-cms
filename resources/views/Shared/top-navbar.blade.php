@@ -50,6 +50,11 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
+                                <a href="{{ url('/dashboard') }}"><i class="fa fa-btn fa-dashboard"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
                                 <a href="/profile"><i class="fa fa-btn fa-user"></i>
                                      Profile
                                 </a>
