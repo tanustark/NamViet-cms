@@ -19,6 +19,7 @@
 
         <div class="top-navbar">
             @yield('top-navbar')
+            @if(Auth::user())
             {{--Edit Profile Modal--}}
             <div class="modal fade" id="editProfile" role="dialog">
                 <div class="modal-dialog">
@@ -71,7 +72,9 @@
                     </form>
                 </div>
             </div>
+            @endif
         </div>
+
         <div class="row" style="margin-top: 100px">
             <div class="left-navbar col-lg-2">
                 @yield('left-navbar')

@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a19aed8c-63ed-4fad-8f4d-875a96b86f5d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Staffs/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Tasks/myTasks.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/Tasks/assign.blade.php" afterPath="$PROJECT_DIR$/resources/views/Shared/error.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TasksController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TasksController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Task.php" afterPath="$PROJECT_DIR$/app/Task.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_06_28_154213_create_tasks_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_06_28_154213_create_tasks_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/app2.min.css" afterPath="$PROJECT_DIR$/public/assets/css/app2.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/app.js" afterPath="$PROJECT_DIR$/public/assets/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Post/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/Post/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Shared/left-navbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/Shared/left-navbar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Shared/top-navbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/Shared/top-navbar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Tasks/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/Tasks/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
     </list>
     <ignored path="namviet-cms.iws" />
@@ -88,10 +72,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2016_06_17_165143_create_post_table.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="master.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.55104554">
+              <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#3;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#4;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#5;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#6;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="c24245fdc345ff2d5e221e1825b450a16d6d7b87.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage/framework/views/c24245fdc345ff2d5e221e1825b450a16d6d7b87.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-30.76923">
+              <caret line="93" column="7" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
+              <folding>
+                <marker date="1467287349000" expanded="true" signature="871:5001" placeholder="..." />
+                <marker date="1467287349000" expanded="true" signature="2471:3160" placeholder="..." />
+                <marker date="1467287349000" expanded="true" signature="2818:3159" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016_06_17_165143_create_post_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_17_165143_create_post_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41416308">
+            <state vertical-scroll-proportion="-14.846154">
               <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
@@ -153,10 +171,10 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/StaffsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Shared/error.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Shared/top-navbar.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_06_17_165143_create_post_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
       </list>
     </option>
   </component>
@@ -177,8 +195,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="295" />
+    <option name="y" value="23" />
     <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="height" value="983" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -347,6 +367,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Post" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="namviet-cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="namviet-cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -539,8 +581,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="top-&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/resources/views/Shared/top-navbar.blade.php&#10;maste&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/resources/views/layouts/master.blade.php&#10;dd299cb2b9f5c0116c880102b0015265ccf36c01.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/dd299cb2b9f5c0116c880102b0015265ccf36c01.php&#10;index&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/resources/views/Tasks/index.blade.php&#10;075c6b15f8125202e6ed30a58b9f64c95e29e3ff.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/075c6b15f8125202e6ed30a58b9f64c95e29e3ff.php&#10;Das&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/app/Http/Controllers/DashboardController.php&#10;dashboard&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/resources/views/dashboard.blade.php&#10;Task&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/app/Http/Controllers/TasksController.php&#10;b11c1a5d09f4141a21a30de07cc8e05172a34763.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/b11c1a5d09f4141a21a30de07cc8e05172a34763.php&#10;d9d20e5b5c0d6a089d4eb7049012dd0b004d5d48.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/d9d20e5b5c0d6a089d4eb7049012dd0b004d5d48.php&#10; d9d20e5b5c0d6a089d4eb7049012dd0b004d5d48.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/d9d20e5b5c0d6a089d4eb7049012dd0b004d5d48.php&#10;Route&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php&#10;6f34429d997ee5c8f537f5f3dfab29ada85e217d.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/6f34429d997ee5c8f537f5f3dfab29ada85e217d.php&#10;fffca21e87a45f2577ad687393649b5aad2ec991.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/fffca21e87a45f2577ad687393649b5aad2ec991.php&#10;Dash&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/app/Http/Controllers/DashboardController.php&#10;f13acb3e7d509112c655e509abafc01927195470.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/f13acb3e7d509112c655e509abafc01927195470.php&#10;Collection&#9;null&#9;null&#10;EloquentCollection &#9;null&#9;null&#10;eloquent&#9;null&#9;null&#10;Response.&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/vendor/symfony/http-foundation/Response.php&#10;das&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/app/Http/Controllers/DashboardController.php&#10;dd299cb2b9f5c0116c880102b0015265ccf36c01&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/dd299cb2b9f5c0116c880102b0015265ccf36c01.php&#10;PostsC&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/app/Http/Controllers/PostsController.php&#10;route&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/app/Http/routes.php&#10;post-&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/resources/views/Shared/post-left-navbar.blade.php&#10;RouteColl&#9;null&#9;null&#10;d1f8028a9acc3d32bcc6d0622a10ecf19e9b350c.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/d1f8028a9acc3d32bcc6d0622a10ecf19e9b350c.php" />
-    <property name="FullScreen" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="c24245fdc345ff2d5e221e1825b450a16d6d7b87.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/c24245fdc345ff2d5e221e1825b450a16d6d7b87.php&#10;top-&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/resources/views/Shared/top-navbar.blade.php&#10;maste&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/resources/views/layouts/master.blade.php&#10;dd299cb2b9f5c0116c880102b0015265ccf36c01.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/dd299cb2b9f5c0116c880102b0015265ccf36c01.php&#10;index&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/resources/views/Tasks/index.blade.php&#10;075c6b15f8125202e6ed30a58b9f64c95e29e3ff.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/075c6b15f8125202e6ed30a58b9f64c95e29e3ff.php&#10;Das&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/app/Http/Controllers/DashboardController.php&#10;dashboard&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/resources/views/dashboard.blade.php&#10;Task&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/app/Http/Controllers/TasksController.php&#10;b11c1a5d09f4141a21a30de07cc8e05172a34763.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/b11c1a5d09f4141a21a30de07cc8e05172a34763.php&#10;d9d20e5b5c0d6a089d4eb7049012dd0b004d5d48.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/d9d20e5b5c0d6a089d4eb7049012dd0b004d5d48.php&#10; d9d20e5b5c0d6a089d4eb7049012dd0b004d5d48.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/d9d20e5b5c0d6a089d4eb7049012dd0b004d5d48.php&#10;Route&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php&#10;6f34429d997ee5c8f537f5f3dfab29ada85e217d.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/6f34429d997ee5c8f537f5f3dfab29ada85e217d.php&#10;fffca21e87a45f2577ad687393649b5aad2ec991.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/fffca21e87a45f2577ad687393649b5aad2ec991.php&#10;Dash&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/app/Http/Controllers/DashboardController.php&#10;f13acb3e7d509112c655e509abafc01927195470.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/f13acb3e7d509112c655e509abafc01927195470.php&#10;Collection&#9;null&#9;null&#10;EloquentCollection &#9;null&#9;null&#10;eloquent&#9;null&#9;null&#10;Response.&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/vendor/symfony/http-foundation/Response.php&#10;das&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/app/Http/Controllers/DashboardController.php&#10;dd299cb2b9f5c0116c880102b0015265ccf36c01&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/dd299cb2b9f5c0116c880102b0015265ccf36c01.php&#10;PostsC&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/app/Http/Controllers/PostsController.php&#10;route&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/app/Http/routes.php&#10;post-&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/resources/views/Shared/post-left-navbar.blade.php&#10;RouteColl&#9;null&#9;null&#10;d1f8028a9acc3d32bcc6d0622a10ecf19e9b350c.php&#9;FILE&#9;file:///Users/tanu/Dropbox/Laravel/namviet-cms/storage/framework/views/d1f8028a9acc3d32bcc6d0622a10ecf19e9b350c.php" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -586,7 +627,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="295" y="23" width="1920" height="983" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -647,13 +688,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24089935">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Response.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68991417">
@@ -951,19 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5384614">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#label#4;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#5;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#6;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Shared/error.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25965664">
@@ -1031,14 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-40.615383">
-          <caret line="57" column="73" selection-start-line="57" selection-start-column="73" selection-end-line="57" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Shared/top-navbar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.384615">
@@ -1049,9 +1062,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_17_165143_create_post_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41416308">
+        <state vertical-scroll-proportion="-14.846154">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-40.615383">
+          <caret line="57" column="73" selection-start-line="57" selection-start-column="73" selection-end-line="57" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/framework/views/c24245fdc345ff2d5e221e1825b450a16d6d7b87.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-30.76923">
+          <caret line="93" column="7" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
+          <folding>
+            <marker date="1467287349000" expanded="true" signature="871:5001" placeholder="..." />
+            <marker date="1467287349000" expanded="true" signature="2471:3160" placeholder="..." />
+            <marker date="1467287349000" expanded="true" signature="2818:3159" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55104554">
+          <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#3;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#4;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#5;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#6;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
