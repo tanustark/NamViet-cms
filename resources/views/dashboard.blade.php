@@ -72,7 +72,7 @@
                     <li style="font-size: 10pt; text-align: left; padding: 10px">Done:<span style="padding-left: 20px; color: #2ca02c">{{ $tasks_done }}</span><br>Total<span style="padding-left: 27px; color: #2ca02c">{{ $tasks->count() }}</span></li>
             </div>
             <div class="col-sm-6">
-                    <li style="font-size: 14pt; text-align: right"><span style="font-size: 26pt;font-weight: bold; color: #2ca02c">0</span><br>Current Task</li>
+                    <li style="font-size: 14pt; text-align: right"><span style="font-size: 26pt;font-weight: bold; color: #2ca02c">{{ $current_task }}</span><br>Current Task</li>
             </div>
             </ul>
         </div>

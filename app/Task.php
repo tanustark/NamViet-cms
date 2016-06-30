@@ -11,6 +11,7 @@ class Task extends Model
         'taskBody',
         'deadline',
         'assignedTo',
+        'user_id',
         'startDate',
         'endDate'
     ];

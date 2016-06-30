@@ -13,10 +13,9 @@
     @endsection
 
 @section('content')
-    <div class="container"></div>
         <div class="col-lg-10 panel panel-default" id="tasks-table" style="float: left">
 
-        <h2 class="page-header">Tasks
+        <h1 class="page-header">Tasks
             @if(Auth::user()->isAdmin == true)
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#assignTask" style="float: right; margin-right: 10px"><i class="fa fa-fw fa-plus"></i> Assign Task </button>
 
@@ -72,7 +71,7 @@
                 </div>
 
             @endif
-        </h2>
+        </h1>
 
         <table class="table table-hover table-responsive tasks-table">
 
@@ -84,9 +83,8 @@
                 <th>Start Date</th>
                 <th>End Date</th>
                 <th>Status</th>
-                @if(Auth::user()->isAdmin == true)
-                    <th>Action</th>
-                    @endif
+                <th>Action</th>
+
             </tr>
             </thead>
             <tbody>
@@ -102,15 +100,21 @@
                     <td>{{ $task->endDate }}</td>
                     <td>
                         @if($task->isDone == false)
-                            In Progress
+                            <span style="color: red">In Progress</span>
                             @else
-                        Done
+                            <span style="color: green">Completed</span>
                             @endif
                     </td>
+                    <td>
+                        @if($task->isDone == false)
+                        <button class="btn btn-success" onclick="successButtonPressed({{  $task->id }})"><i class="glyphicon glyphicon-ok" id="task-action-button"></i></button>
+                        @else
+                            <button class="btn btn-danger" onclick="notSuccessButtonPressed({{  $task->id }})"><i class="glyphicon glyphicon-remove" id="take-action-button"></i></button>
+                        @endif
+
                     @if(Auth::user()->isAdmin == true)
-                        <td>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#modal-action"><i class="glyphicon glyphicon-edit" id="task-action-button"></i></button>
-                        </td>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#modal-action"><i class="glyphicon glyphicon-edit" id="take-action-button"></i></button>
+                    </td>
 
                     {{--Modal Action to Edit current task--}}
 
@@ -170,5 +174,4 @@
             </tbody>
         </table>
         </div>
-    </div>
     @endsection

@@ -14,12 +14,12 @@
 
 @section('content')
     <div class="container">
-        <div class="col-lg-9 container">
+        <div class="col-lg-9 container panel panel-default">
             <div class="page-wrapper">
-                    <h1 class="page-header">{{ $post->title }}</h1>
+                    <h1 class="panel-heading">{{ $post->title }}</h1><hr>
                         <div class="author">Posted by: {{ $user->fullname }} &nbsp;&nbsp;&nbsp;Published at: {{ $post->created_at }}</div><hr>
                         <div class="row">
-                            <div>
+                            <div class="panel-body">
                                 <p id="post-body-full">{{ $post->body }}</p>
                             </div>
 

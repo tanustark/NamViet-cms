@@ -12,7 +12,8 @@ use App\Http\Requests;
 
 class TasksController extends Controller
 {
-    public function __contruct(){
+    public function __construct()
+    {
         $this->middleware('auth');
     }
 
@@ -24,17 +25,19 @@ class TasksController extends Controller
     }
 
     public function confirm(Request $request){
+        $user = User::find($request->assignedTo);
         $task = new Task ([
             'taskName' => $request->taskName,
             'taskBody' => $request->taskBody,
             'assignedTo' => $request->assignedTo,
+            'user_id' => $user->id,
             'startDate' => $request->startDate,
             'endDate' =>  $request->endDate,
             'isDone' => false
         ]);
-
-        $task->save();
         $task->load('users');
+        $task->save();
+
         return back();
     }
 
@@ -64,7 +67,25 @@ class TasksController extends Controller
         $task->save();
 
         return back();
+    }
 
+    public function success($taskID){
+        $task = Task::find($taskID);
+        $task->isDone = true;
+        $task->save();
+        return back();
+    }
+    public function notSuccess($taskID){
+        $task = Task::find($taskID);
+        $task->isDone = false;
+        $task->save();
+        return back();
+    }
 
+    public function myTasks(){
+        $user=Auth::user();
+        $tasks = $user->tasks;
+        return view('Tasks.myTasks', compact('tasks'));
+        //return $task;
     }
 }

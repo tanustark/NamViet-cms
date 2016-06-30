@@ -9,3 +9,21 @@ function taskDeleteButtonPressed($taskID){
         window.location='tasks/delete/'+$taskID
     }
 }
+
+function successButtonPressed($taskID){
+    if(confirm("Are you sure complete this task?") == true){
+        window.location='/tasks/success/'+$taskID
+    }
+}
+
+function notSuccessButtonPressed($taskID){
+    if(confirm("Are you sure this task is not completed?") == true){
+        window.location='tasks/notsuccess/'+$taskID
+    }
+}
+
+function deleteStaffButtonPressed($staffID){
+    if(confirm("Are you sure want to delete this staff?") == true){
+        window.location='staffs/delete/'+$staffID
+    }
+}

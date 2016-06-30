@@ -52,34 +52,9 @@
                                     My Tasks
                                 </a>
                             </li>
-                            <li>
-                                <a href="/tasks/add"><i class="fa fa-btn fa-plus"></i>
-                                    Add New Task
-                                </a>
-                            </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle"
-                           data-toggle="dropdown" role="button"
-                           aria-expanded="false">
-                           <i class="fa fa-users"></i>
-                            Staff
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="/staffs/add"><i class="fa fa-btn fa-plus"></i>
-                                    Add New Task
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/staff/manage') }}"><i class="fa fa-btn fa-users"></i>
-                                    Manage Staff
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                    <li><a href="/staffs"><i class="fa fa-btn fa-users"></i>Staffs</a></li>
                 </ul>
                 @endif
         </div>

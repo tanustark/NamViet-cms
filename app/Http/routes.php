@@ -44,4 +44,15 @@ Route::group(['prefix' => 'tasks'], function(){
     Route::get('/manage', 'TasksController@manage');
     Route::get('delete/{taskID}','TasksController@delete');
     Route::post('update/{taskID}', 'TasksController@update');
+    Route::get('success/{taskID}', 'TasksController@success');
+    Route::get('/notsuccess/{taskID}', 'TasksController@notSuccess');
+    Route::get('mytasks', 'TasksController@myTasks');
 });
+
+Route::group(['prefix' => 'staffs'], function(){
+    Route::get('/', 'StaffsController@index');
+    Route::post('/confirm', 'StaffsController@confirm');
+    Route::get('/delete/{staffID}', 'StaffsController@delete');
+});
+
+Route::post('/profile/update/{userID}', 'UsersController@updateProfile');

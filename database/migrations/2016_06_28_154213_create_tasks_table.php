@@ -15,6 +15,7 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('assignedTo')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->string('taskName');
             $table->text('taskBody');
             $table->date('startDate');
@@ -25,6 +26,7 @@ class CreateTasksTable extends Migration
 
         Schema::table('tasks', function(Blueprint $table){
             $table->foreign('assignedTo')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -37,6 +39,7 @@ class CreateTasksTable extends Migration
     {
         Schema::table('tasks', function (Blueprint $table){
             $table->dropForeign(['assignedTo']);
+            $table->dropForeign(['user_id']);
         });
         Schema::drop('tasks');
     }

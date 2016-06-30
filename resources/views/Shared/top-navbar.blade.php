@@ -55,8 +55,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/profile"><i class="fa fa-btn fa-user"></i>
-                                     Profile
+                                <a data-toggle="modal" data-target="#editProfile"><i class="fa fa-btn fa-user"></i>
+                                     Edit Profile
                                 </a>
                             </li>
                             <li>
@@ -66,7 +66,7 @@
                             </li>
                         </ul>
                     </li>
-                    @endif
+                @endif
             </ul>
         </div>
     </div>
