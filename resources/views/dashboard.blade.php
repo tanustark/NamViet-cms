@@ -27,8 +27,9 @@
             </ul>
         </div>
 
+        {{--All Member Section--}}
         <div class="col-lg-7 panel panel-default" style="float: right" id="members">
-            <h4><i class="fa fa-fw fa-users"></i> All Members</h4><hr>
+            <h4><i class="fa fa-fw fa-users"></i> All Members <span style="float:right; font-weight: bold; font-size: 18pt; color: #2ca02c ">{{ $users->count() }}</span> </h4><hr>
             <table class="table table-hover table-responsive member-table">
                 <thead>
                 <tr>

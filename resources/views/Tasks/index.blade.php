@@ -93,21 +93,21 @@
                     <p>There is no post yet</p>
                 @endif
                 <tr class="task">
-                    <td style="text-wrap: normal; text-overflow: ellipsis; overflow: hidden">{{ $task->taskName }}</td>
+                    <td style="text-wrap: normal; text-overflow: ellipsis; overflow: hidden; font-weight: bold">{{ $task->taskName }}</td>
                     <td style="text-wrap: normal; text-overflow: ellipsis; overflow: hidden">{{ $task->taskBody }}</td>
                     <td>{{ $task->users->fullname }}</td>
                     <td>{{ $task->startDate }}</td>
                     <td>{{ $task->endDate }}</td>
                     <td>
                         @if($task->isDone == false)
-                            <span style="color: red">In Progress</span>
+                            <span style="color: red; font-weight: bold">In Progress</span>
                             @else
-                            <span style="color: green">Completed</span>
+                            <span style="color: green; font-weight: bold">Completed</span>
                             @endif
                     </td>
                     <td>
                         @if($task->isDone == false)
-                        <button class="btn btn-success" onclick="successButtonPressed({{  $task->id }})"><i class="glyphicon glyphicon-ok" id="task-action-button"></i></button>
+                        <button class="btn btn-success" onclick="successButtonPressed({{  $task->id }})"><i class="glyphicon glyphicon-ok" id="take-action-button"></i></button>
                         @else
                             <button class="btn btn-danger" onclick="notSuccessButtonPressed({{  $task->id }})"><i class="glyphicon glyphicon-remove" id="take-action-button"></i></button>
                         @endif
@@ -162,7 +162,7 @@
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-success">Update</button>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <button type="button" onclick="taskDeleteButtonPressed({{ $task->id }})" class="glyphicon glyphicon-trash btn btn-danger" style="float: left"></button>
+                                            <button type="button" onclick="taskDeleteButtonPressed({{ $task->id }})" class="glyphicon glyphicon-trash btn btn-danger" style="float: left" id="take-action-button"></button>
                                         </div>
                                     </div>
                                 </form>

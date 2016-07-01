@@ -56,3 +56,6 @@ Route::group(['prefix' => 'staffs'], function(){
 });
 
 Route::post('/profile/update/{userID}', 'UsersController@updateProfile');
+Route::get('/contact', function(){
+    return view('contact');
+});

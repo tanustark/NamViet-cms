@@ -34,15 +34,15 @@
                         <p>There is no post yet</p>
                     @endif
                     <tr class="task">
-                        <td style="text-wrap: normal; text-overflow: ellipsis; overflow: hidden">{{ $task->taskName }}</td>
+                        <td style="text-wrap: normal; text-overflow: ellipsis; overflow: hidden; font-weight: bold">{{ $task->taskName }}</td>
                         <td style="text-wrap: normal; text-overflow: ellipsis; overflow: hidden">{{ $task->taskBody }}</td>
                         <td>{{ $task->startDate }}</td>
                         <td>{{ $task->endDate }}</td>
                         <td>
                             @if($task->isDone == false)
-                                <span style="color: red">In Progress</span>
+                                <span style="color: red; font-weight: bold">In Progress</span>
                             @else
-                                <span style="color: green">Completed</span>
+                                <span style="color: green; font-weight: bold">Completed</span>
                             @endif
                         </td>
                         <td>

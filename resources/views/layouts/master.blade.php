@@ -25,14 +25,13 @@
                 <div class="modal-dialog">
                     <!-- Modal content-->
                     <form method="POST" action="/profile/update/{{ Auth::user()->id }}">
+                        {{ csrf_field() }}
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title"><i class="fa fa-fw fa-edit"></i>Edit your profile</h4>
                             </div>
                             <div class="modal-body">
-
-                                {{ csrf_field() }}
 
                                 <div class="form-group">
                                     {{--Fullname--}}

@@ -27,6 +27,11 @@
                         <input type="text" class="form-control" name="title" placeholder="Enter the title of the post">
                     </div>
                     <div class="form-group">
+                        <label for="image_file">Cover Image</label>
+                        <input type="file" id="image_file" name="image_file"  value="{{ old('image_file')}}">
+                        <p class="help-block">This is image will be shown as your post's cover image.</p>
+                    </div>
+                    <div class="form-group">
                         <textarea type="text" class="form-control" name="body" placeholder="Enter the body of the post"></textarea>
                     </div>
                     <div class="button">

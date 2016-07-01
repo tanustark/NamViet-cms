@@ -37,7 +37,9 @@ html body{
     font-size: 18pt;
     font-weight: bold;
 }
-
+.panel-default>.panel-heading {
+    background-color: transparent;
+}
 .author{
     font-size: 12pt;
     font-weight: bold;

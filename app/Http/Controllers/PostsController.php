@@ -55,7 +55,7 @@ class PostsController extends Controller
         //$posts=Post::with('users.comments')->find(8);
         $posts->save();
         $user->load('posts.comments');
-        //return $user;
+        return $request;
         return view('Post.confirmation', compact('posts', 'user'));
     }
 
