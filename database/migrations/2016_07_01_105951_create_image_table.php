@@ -16,9 +16,6 @@ class CreateImageTable extends Migration
             $table->increments('id');
             $table->integer('post_id')->unsigned();
             $table->string('imgName');
-            $table->string('imgCtgy');
-            $table->string('imgType');
-            $table->string('imgSize');
             $table->timestamps();
         });
         Schema::table('images', function(Blueprint $table){

@@ -17,7 +17,6 @@ class CreatePostTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->string('title');
             $table->text('body');
-            $table->string('imgpath');
             $table->timestamps();
         });
         Schema::table('posts', function (Blueprint $table){

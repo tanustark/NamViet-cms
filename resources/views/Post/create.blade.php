@@ -21,7 +21,7 @@
                     <p>*You need to fill in all fields to create a new post</p>
                 </div>
 
-                <form method="POST" action="confirm">
+                <form method="POST" enctype="multipart/form-data" action="confirm">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <input type="text" class="form-control" name="title" placeholder="Enter the title of the post">

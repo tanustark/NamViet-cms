@@ -28,6 +28,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading" id="post-heading">{{ $post->title }}</div>
                     <div class="author">Posted by: {{ $post->users->fullname }} &nbsp;&nbsp;&nbsp;Published at: {{ $post->created_at }}</div><hr>
+                    <div class="cover">
+                        <img class="cover-image" src="{{ URL::to('/') }}/assets/img/posts/{{ $post->images->imgName }}">
+                    </div>
                     <p class="panel-body" id="post-body">{{ $post->body }}</p>
                 </div>
             @endforeach

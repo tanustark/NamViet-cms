@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Images;
 use DB;
 use App\Post;
 use App\User;
+use App\Comment;
 use Hamcrest\Type\IsBoolean;
 use Illuminate\Http\Request;
 
@@ -21,17 +23,34 @@ class PostsController extends Controller
 
 
     public function show($postID){
-        $user = User::first();
         $post = Post::find($postID);
-        return view('Post.show', compact('post','user'));
+        $post->load('users.comments');
+        $post->load('images');
+        $comments = Comment::paginate(5);
+        return view('Post.show', compact('post','comments'));
+        //return $post;
     }
 
-    public function index(User $user){
+    public function comment(Request $request, $postID){
+        $users = User::all();
+        $user = Auth::user();
+        $comments = Comment::all();
+        $comment = new Comment ([
+            'user_id' => $user->id,
+            'post_id' => $postID,
+            'body' => $request->comment
+        ]);
+        $comment->save();
+        $comment->load('users.posts');
+        $comments->load('users.posts');
+        return back();
+    }
+
+    public function index(){
         $user=User::all();
         $posts = Post::all()->sortByDesc('id');
-        //$posts->load('users.comments');
-        $user->load('posts.comments');
-        $posts->load('users');//must bind user who logged
+        $posts->load('users');
+        $posts->load('images');
         //$posts=Post::with('users.comments')->find(1);
         return view('Post.index', compact('posts', 'user'));
 
@@ -46,17 +65,22 @@ class PostsController extends Controller
 
     public function confirmation(Request $request){
         $user = Auth::user();
+
         $posts = new Post([
             'title' => $request->title,
             'body' => $request->body,
             'user_id' => $user->id,
-            'imgPath' => ''
         ]);
-        //$posts=Post::with('users.comments')->find(8);
         $posts->save();
-        $user->load('posts.comments');
-        return $request;
-        return view('Post.confirmation', compact('posts', 'user'));
+        $imgName = $posts->id . '.' .'jpg';
+        $path = base_path() . '/public/assets/img/posts/';
+        $request->file('image_file')->move($path, $imgName);
+        $cover_image = new Images ([
+            'imgName' => $imgName,
+            'post_id' => $posts->id,
+        ]);
+        $cover_image->save();
+        return view('Post.confirmation');
     }
 
     public function manage(){
@@ -65,6 +89,7 @@ class PostsController extends Controller
         //$posts->load('users.comments');
         $user->load('posts.comments');
         $posts->load('users');//must bind user who logged
+        $posts->load('images');
         return view('Post.manage', compact('posts', 'user'));
     }
 
@@ -75,17 +100,29 @@ class PostsController extends Controller
 
     public function edit($postID){
         $post = Post::find($postID);
+        $post->load('images');
         return view('Post.edit', compact('post'));
     }
 
     public function update(Request $request, Post $post, $postID){
+
+        $imgName = $postID . '.' .'jpg';
+        $path = base_path() . '/public/assets/img/posts/';
+        $request->file('image_file')->move($path, $imgName);
+        $cover_image = new Images ([
+            'imgName' => $imgName,
+            'post_id' => $postID,
+        ]);
+        $cover_image->save();
+
         $post=Post::find($postID);
-        $user = Auth::user();
-            $post->title = $request->title;
-            $post->body = $request->body;
+        $post->title = $request->title;
+        $post->body = $request->body;
         $post->save();
-        $user->load('posts.comments');
-        return view('Post.confirmation', compact('posts', 'user'));
+        $post->load('images');
+
+        return view('Post.confirmation');
+
     }
 
     public function delete($postID){
@@ -98,30 +135,35 @@ class PostsController extends Controller
     {
         $user = Auth::user();
         $posts = DB::table('posts')->where('user_id', $user->id)->orderBy('id','desc')->get();
-        //$user->load('posts.comments');
-        //$posts->load('users');
-        //$posts = Post::all();
         return view('Post.my-post', compact('posts','user'));
     }
 
     public function showmypost($postID){
         $user=Auth::user();
         $post = Post::find($postID);
-        return view('Post.showmypost', compact('post','user'));
+        $post->load('images');
+        $comments = Comment::paginate(5);
+        return view('Post.showmypost', compact('post','user','comments'));
     }
 
     public function editmypost($postID){
         $post = Post::find($postID);
+        $post->load('images');
         return view('Post.editmypost', compact('post'));
     }
 
-    public function updatemypost(Request $request, Post $post, $postID){
-        $post=Post::find($postID);
-        $user = Auth::user();
+    public function updatemypost(Request $request, $postID){
+        $post = Post::find($postID);
         $post->title = $request->title;
         $post->body = $request->body;
         $post->save();
-        $user->load('posts.comments');
-        return view('Post.confirmation', compact('posts', 'user'));
+//Replace old cover image
+        $imgName = $post->id . '.' .'jpg';
+        $path = base_path() . '/public/assets/img/posts/';
+        $request->file('image_file')->move($path, $imgName);
+        $cover_image = Images::find($post->images->id);
+        $cover_image->save();
+
+        return view('Post.confirmation');
     }
 }

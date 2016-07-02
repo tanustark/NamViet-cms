@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix' => 'comments'], function(){
+    Route::post('/{cmtID}/edit', 'CommentController@edit');
+    Route::get('/delete/{cmtID}', 'CommentController@delete');
+});
+
 
 Route::group(['prefix' => 'posts'], function(){
     Route::get('', 'PostsController@index');
@@ -32,6 +37,7 @@ Route::group(['prefix' => 'posts'], function(){
     Route::get('myposts/edit/{postID}', 'PostsController@editmypost');
     Route::get('myposts/{postID}/update', 'PostsController@updatemypost');
     Route::get('{postID}', 'PostsController@show');
+    Route::post('{postID}/comment', 'PostsController@comment');
 });
 
 Route::auth();
@@ -59,3 +65,6 @@ Route::post('/profile/update/{userID}', 'UsersController@updateProfile');
 Route::get('/contact', function(){
     return view('contact');
 });
+
+Route::get('/search', 'SearchController@search');
+

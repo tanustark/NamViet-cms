@@ -4,29 +4,34 @@ html body{
 }
 
 .page-wrapper{
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 .jumbotron{
     background-color: #f9f9f9;
     border: groove;
     border-color: #2ca02c;
 }
-.list-group-item{
-    list-style: none;
-    background-color: transparent;
-    border: transparent;
-}
 
-.list-group-item li a{
-    padding: 20px;
-    color: #0f0f0f;
-}
+/*.list-group-item{*/
+    /*list-style: none;*/
+    /*background-color: transparent;*/
+    /*border: transparent;*/
+/*}*/
 
-.list-group-item li{
-    font-size: larger;
-    padding-top: 10px
-}
+/*.list-group-item li a{*/
+    /*padding: 20px;*/
+/*}*/
 
+/*.list-group-item li{*/
+    /*font-size: larger;*/
+    /*padding-top: 10px*/
+/*}*/
+
+#cmtsec {
+    height: 100px;
+    text-wrap: normal;
+    font-size: 12pt;
+}
 .page-header{
     text-align: justify;
 }
@@ -211,4 +216,16 @@ tr {
     height: 200px;
     width: 97%;
     position: absolute;
+}
+
+.cover-image{
+    width: 823px;
+    height: auto;
+}
+
+#search-box{
+    width: 400px;
+    height: 30px;
+    font-size: 12pt;
+    font-weight: normal;
 }

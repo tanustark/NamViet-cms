@@ -27,3 +27,9 @@ function deleteStaffButtonPressed($staffID){
         window.location='staffs/delete/'+$staffID
     }
 }
+
+function commentDeleteButtonPressed($cmtID){
+    if(confirm("Are you sure want to delete this comment") == true){
+        window.location='/comments/delete/'+$cmtID
+    }
+}

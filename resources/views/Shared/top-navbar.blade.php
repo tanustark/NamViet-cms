@@ -29,6 +29,14 @@
                     <a href="{{ url('/login') }}">Dashboard</a>
                         @endif
                 </li>
+                <li style="margin-top: 10px; padding-left: 60px">
+                    <form method="get" action="/search">
+                    <div class="form-group">
+                        <input type="search" class="form-control" id="search-box" name="search_string" placeholder="Type and hit Enter to search ...">
+                    </div>
+                        </form>
+                </li>
+
             </ul>
 
             {{--Right side of navbar--}}

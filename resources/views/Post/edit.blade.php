@@ -21,18 +21,26 @@
                     <p>*You can edit your post here</p>
                 </div>
 
-                <form method="POST" action="/posts/{{ $post->id }}/update">
-                    {{--{{ method_field('PATCH') }}--}}
+                <form method="POST" action="/posts/{{ $post->id }}/update" enctype="multipart/form-data">
+
                     {{ csrf_field() }}
+
                     <div class="form-group">
                         <input type="text" class="form-control" name="title" value="{{ $post->title }}">
                     </div>
+
+                    <div class="form-group">
+                        <label for="image_file">Cover Image</label>
+                        <input type="file" id="image_file" name="image_file">
+                        <p class="help-block">This is image will be shown as your post's cover image.</p>
+                    </div>
+
                     <div class="form-group">
                         <textarea type="text" class="form-control" name="body">{{ $post->body }}</textarea>
                     </div>
                     <div class="button">
                         <button type="submit" class="btn btn-success">Update</button>
-                        <a href="/post/manage" class="btn btn-primary" role="button">Back</a>
+                        <a href="/posts/manage" class="btn btn-primary" role="button">Back</a>
                     </div>
                 </form>
             </div>

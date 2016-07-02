@@ -75,7 +75,7 @@
         </div>
 
         <div class="row" style="margin-top: 100px">
-            <div class="left-navbar col-lg-2">
+            <div class="left-navbar col-sm-2">
                 @yield('left-navbar')
             </div>
 

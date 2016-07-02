@@ -1,4 +1,4 @@
-<nav class="col-lg-12">
+<nav class="col-sm-12">
     <div class="container-fluid">
         <div class="row">
                 <ul class="nav nav-sidebar navbar-default sidebar">
