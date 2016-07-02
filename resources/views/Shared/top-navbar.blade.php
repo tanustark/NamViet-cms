@@ -27,8 +27,9 @@
                             @endif
                         @else
                     <a href="{{ url('/login') }}">Dashboard</a>
-                        @endif
+                    @endif
                 </li>
+                @if(Auth::user())
                 <li style="margin-top: 10px; padding-left: 60px">
                     <form method="get" action="/search">
                     <div class="form-group">
@@ -36,6 +37,7 @@
                     </div>
                         </form>
                 </li>
+                    @endif
 
             </ul>
 
@@ -49,6 +51,9 @@
                         </a>
                     </li>
                 @else
+                    <li>
+                        <a href="site">Site</a>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle"
                            data-toggle="dropdown" role="button"

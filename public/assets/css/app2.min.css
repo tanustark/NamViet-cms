@@ -229,3 +229,14 @@ tr {
     font-size: 12pt;
     font-weight: normal;
 }
+
+#searchResult{
+   height: 120px;
+}
+#searchResultBody{
+    height: 80px;
+    text-align: justify;
+    text-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

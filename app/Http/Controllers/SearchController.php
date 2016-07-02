@@ -14,8 +14,12 @@ class SearchController extends Controller
     public function search(Request $request){
 
         $query = $request->search_string;
-        $result = DB::table('posts')->where('title', 'LIKE', "%$query%")->get();
-        //$posts = Post::all();
-        return $result;
+        $results = DB::table('posts')
+            ->where('title', 'LIKE', "%$query%")
+            ->get();
+//        $result->load('users.comments');
+//        $result->load('images');
+        return view('Search.result', compact('results'));
+        return $results;
     }
 }
