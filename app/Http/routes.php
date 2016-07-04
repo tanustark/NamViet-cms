@@ -68,3 +68,8 @@ Route::get('/contact', function(){
 
 Route::get('/search', 'SearchController@search');
 
+Route::group(['prefix' => 'site'], function(){
+    Route::get('/', 'SiteController@index');
+    Route::get('/posts/{postID}', 'SiteController@show');
+});
+

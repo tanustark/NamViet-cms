@@ -23,7 +23,7 @@
                             @if(Auth::user()->isAdmin == true)
                                     <a style="color: white" href="#"><i class="fa fa-fw fa-user"></i>&nbsp;Administrator</a>
                             @else
-                            <a style="color: white" href="#"><i class="fa fa-fw fa-user"></i>&nbsp;Staff</a>
+                            <a style="color: white; background-color: transparent" href="#"><i class="fa fa-fw fa-user"></i>&nbsp;Staff</a>
                             @endif
                         @else
                     <a href="{{ url('/login') }}">Dashboard</a>

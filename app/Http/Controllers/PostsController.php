@@ -26,9 +26,9 @@ class PostsController extends Controller
         $post = Post::find($postID);
         $post->load('users.comments');
         $post->load('images');
-        $comments = Comment::paginate(5);
-        return view('Post.show', compact('post','comments'));
-        //return $post;
+        $comments = $post->comments;
+        return view('Post.show', compact('post', 'comments'));
+        //return $comments;
     }
 
     public function comment(Request $request, $postID){

@@ -17,7 +17,8 @@
 </head>
 <body>
 
-        <div class="top-navbar">
+    {{--Top navbar--}}
+        <div class="row col-lg-12">
             @yield('top-navbar')
             @if(Auth::user())
             {{--Edit Profile Modal--}}
@@ -74,16 +75,19 @@
             @endif
         </div>
 
-        <div class="row" style="margin-top: 100px">
-            <div class="left-navbar col-sm-2">
+    {{--Left navbar--}}
+            <div class="left-navbar col-lg-2" style= "margin-top: 100px">
                 @yield('left-navbar')
             </div>
-
-            <div class="content col-lg-10">
+            
+     {{--Content--}}
+            <div class="content col-lg-10" style= "margin-top: 100px">
                 @yield('content')
             </div>
         </div>
 
+
+    {{--Footer--}}
         <div class="footer">
             @yield('footer')
         </div>

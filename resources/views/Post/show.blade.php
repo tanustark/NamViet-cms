@@ -42,7 +42,6 @@
                     @foreach($comments as $comment)
                     <li class="list-group-item">
 
-
                         @if($comment->users->email == Auth::user()->email)
                             <span style="font-weight: bold; color: #2ca02c">
                                 {{ $comment->users->fullname }}
@@ -52,11 +51,11 @@
                             </span>
 
                             <span style="float: right;">
-                                <button data-toggle="modal" data-target="#editComment" class="fa fa-btn fa-edit"></button>
+                                <button data-toggle="modal" data-target="#editComment{{ $comment->id }}" class="fa fa-btn fa-edit"></button>
                             </span>
 
                         {{--Edit Comment Modal--}}
-                        <div class="modal fade" id="editComment" role="dialog">
+                        <div class="modal fade" id="editComment{{ $comment->id }}" role="dialog">
                             <div class="modal-dialog">
                                 <!-- Modal content-->
                                 <form method="POST" action="/comments/{{ $comment->id }}/edit">
@@ -65,6 +64,7 @@
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             <h4 class="modal-title"><i class="fa fa-fw fa-edit"></i> Edit Comment</h4>
                                         </div>
+
                                         <div class="modal-body">
 
                                             {{ csrf_field() }}
@@ -90,7 +90,7 @@
                         @endif
                     </li>
                         @endforeach
-                    <div class="pagination"> {{ $comments->links() }} </div>
+                    {{--<div class="pagination"> {{ $comments->links() }} </div>--}}
                 </ul>
                 </form>
             </div>

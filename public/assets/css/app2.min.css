@@ -9,7 +9,7 @@ html body{
 .jumbotron{
     background-color: #f9f9f9;
     border: groove;
-    border-color: #2ca02c;
+    border-color: #222831;
 }
 
 /*.list-group-item{*/
@@ -72,6 +72,7 @@ hr{
     text-align: justify;
     width: 100%;
     height: auto;
+    white-space: pre-wrap;
 }
 
 textarea.form-control{
@@ -111,7 +112,7 @@ label{
     font-size: 12pt;
     font-weight: bold;
     padding: 5px;
-    color: #2ca02c;
+    color: #222831;
 }
 
 .button{
@@ -131,35 +132,41 @@ i {
     color: red;
 }
 
+
 .top-navbar{
-    background-color: #2ca02c;
+    background-color: #222831;
 }
+
 
 .navbar-nav>li>a{
      color: white;
  }
 
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
-    background-color: #2ca02c;
+    background-color: #00ADB5;
 }
 
 .navbar-nav>li>a:hover{
-    background-color: #2ca02c;
+    background-color: #00ADB5;
+    transition-duration: 0.5s;
 }
 
 .sidebar {
     font-size: 12pt;
-    color: #0f0f0f;
     padding: 5px;
-    background-color: #2ca02c;
+    background-color: #fff;
+    height: 100%;
+    list-style: none;
+    border-radius: 5px;
 }
 
 .sidebar>li>a{
-    color: #fafafa;
+    color: #222831;
 }
 
-.nav > li > a:hover{
-    background-color: #216f21;
+.sidebar > li > a:hover{
+    background-color: #00ADB5;
+    transition-duration: 0.5s;
 }
 
 #posts-count{
