@@ -20,7 +20,7 @@ class SiteController extends Controller
 //        });
 //        $sitePosts->all()->paginate(10);
 
-        $sitePosts = Post::where('isAccepted', '=', true)->paginate(10);
+        $sitePosts = Post::where('isAccepted', '=', true)->orderBy('updated_at', 'desc')->paginate(10);
 
 
         $highlight = $posts->filter(function ($posts){
