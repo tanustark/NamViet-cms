@@ -21,7 +21,7 @@
                     <p>*You can edit your post here</p>
                 </div>
 
-                <form method="POST" action="/myposts/{{ $post->id }}/update">
+                <form method="POST" action="/posts/myposts/{{ $post->id }}/update">
                     {{--{{ method_field('PATCH') }}--}}
                     {{ csrf_field() }}
                     <div class="form-group">

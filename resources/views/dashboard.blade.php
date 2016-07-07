@@ -84,10 +84,11 @@
             <table class="table table-hover table-responsive dashboard-table">
                 <thead>
                     <tr>
-                        <th>Fullname</th>
-                        <th>Email</th>
                         <th>Title</th>
-                        <th>Published at</th>
+                        <th>Posted By</th>
+                        <th>Email</th>
+                        <th>Last Modified</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -96,10 +97,33 @@
                             <p>There is no post yet</p>
                             @endif
                     <tr>
+                        <td id="postTitle">
+                            <a href="/posts/{{ $item->id }}">
+                            {{ $item->title }}
+                            </a>
+                        </td>
                         <td>{{ $item->users->fullname }}</td>
                         <td>{{ $item->users->email }}</td>
-                        <td>{{ $item->title }}</td>
-                        <td>{{ $item->created_at }}</td>
+                        <td>{{ date('F d, Y', strtotime($item->updated_at)) }}</td>
+                        <td>
+                            @if($item->isAccepted == false)
+                                <span style="font-style: italic; color: darkorange; font-weight: bold">
+                                    Pending
+                                </span>
+                            @endif
+
+                            @if($item->isAccepted == true && $item->isHighlighted == false)
+                                <span style="font-style: italic; color: green; font-weight: bold">
+                                    Published
+                                </span>
+                            @endif
+
+                            @if($item->isAccepted == true && $item->isHighlighted == true)
+                                <span style="font-style: italic; color: royalblue; font-weight: bold">
+                                    Highlighted
+                                </span>
+                            @endif
+                        </td>
                     </tr>
                         @endforeach
                 </tbody>

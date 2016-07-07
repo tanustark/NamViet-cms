@@ -29,7 +29,56 @@ function deleteStaffButtonPressed($staffID){
 }
 
 function commentDeleteButtonPressed($cmtID){
-    if(confirm("Are you sure want to delete this comment") == true){
+    if(confirm("Are you sure want to delete this comment?") == true){
         window.location='/comments/delete/'+$cmtID
     }
 }
+
+function createPostButtonPressed(){
+    window.location='/posts/create'
+}
+
+function managePostButtonPressed(){
+    window.location='/posts/manage'
+}
+
+function allPostButtonPressed(){
+    window.location='/posts'
+}
+
+function deleteMyPostButtonPressed($postID){
+    if(confirm("Are you sure want to delete this post?") == true){
+        window.location='/posts/delete/'+$postID
+    }
+}
+
+function acceptPostButtonPressed($postID){
+    if(confirm("Are you sure want to accept this post to be published into Main Site?") == true){
+        window.location='/posts/publish/'+$postID
+    }
+}
+
+function removePostButtonPressed($postID){
+    if(confirm("Are you sure want to remove this post from Main Site?") == true){
+        window.location='/posts/remove/'+$postID
+    }
+}
+
+function highlightPostButtonPressed($postID){
+    if(confirm("Are you sure want to highlight this post?") == true){
+        window.location='/posts/highlight/'+$postID
+    }
+}
+
+function editPostButtonPressed($postID){
+    window.location='/posts/edit/'+$postID
+}
+
+function editMyPostButtonPressed($postID){
+    window.location='/posts/myposts/edit/'+$postID
+}
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+

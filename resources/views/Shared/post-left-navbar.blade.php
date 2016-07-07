@@ -4,7 +4,7 @@
         <div class="row panel panel-default">
                 <ul class="nav sidebar">
                     <li>
-                        <a href="/posts/create" style="font-weight: bold; font-size: 14pt; background-color: green; color: #fff"><i class="fa fa-fw fa-plus-circle"></i>&nbsp;&nbsp;Create New Post</a>
+                        <button class="btn btn-success" data-toggle="tooltip" title="Create new post" id="createPostButton" onclick="createPostButtonPressed()"><i class="fa fa-plus"></i> Create New Post</button>
                     </li><hr>
 
                     {{--Dashboard Button--}}

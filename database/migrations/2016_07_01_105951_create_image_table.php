@@ -33,6 +33,6 @@ class CreateImageTable extends Migration
         Schema::table('images', function(Blueprint $table){
             $table->dropForeign(['post_id']);
         });
-        Schema::drop('=images');
+        Schema::drop('images');
     }
 }

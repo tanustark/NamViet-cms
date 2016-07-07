@@ -50,17 +50,23 @@ html body{
 }
 #search-box {
     float: left;
-    width: 40%;
+    width: 300px;
+}
+
+#searchResult{
+    height:auto;
+}
+
+#searchResultBody{
+    height: 80px;
+    text-align: justify;
+    text-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 
 /*Posts Section*/
-
-#highlights{
-    height: 350px;
-    background-color: #00ADB5;
-    margin-bottom: 20px;
-}
 
 #post-heading{
     text-align: justify;
@@ -105,6 +111,40 @@ hr{
     width: 100%;
     height: auto;
     white-space: pre-wrap;
+}
+
+#highlighPost{
+    position: relative;
+}
+
+#highlightTitle{
+    width: 823px;
+    height: auto;
+    position: absolute;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.45);
+    position: absolute;
+    top: 58px;
+    padding-left: 10px;
+}
+
+#highlightTitle{
+    width: 823px;
+    height: auto;
+    color: white;
+    position: absolute;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.45);
+    position: absolute;
+    top: 58px;
+    padding-left: 10px;
+}
+
+#highlightTitle > h1 > a{
+    color: white;
+}
+#highlightTitle a:hover{
+    color: #2aabd2;
 }
 
 

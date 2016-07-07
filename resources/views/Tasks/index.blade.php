@@ -100,9 +100,9 @@
                     <td>{{ $task->endDate }}</td>
                     <td>
                         @if($task->isDone == false)
-                            <span style="color: red; font-weight: bold">In Progress</span>
+                            <span style="color: darkorange; font-weight: bold; font-style: italic">In Progress</span>
                             @else
-                            <span style="color: green; font-weight: bold">Completed</span>
+                            <span style="color: green; font-weight: bold; font-style: italic">Completed</span>
                             @endif
                     </td>
                     <td>

@@ -1,15 +1,16 @@
 <nav>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 panel panel-default">
             @if(Auth::user()->isAdmin == false)
             <ul class="nav sidebar">
                 <li>
-                    <a href="dashboard"><i class="fa fa-btn fa-dashboard"></i>Dashboard</a>
+                    <a href="/dashboard"><i class="fa fa-btn fa-dashboard"></i>Dashboard</a>
                 </li><hr>
 
                 <li>
-                    <a href="posts"><i class="fa fa-btn fa-file"></i>Posts</a>
+                    <a href="/posts"><i class="fa fa-btn fa-file"></i>Posts</a>
                 </li><hr>
                 {{--<li><a href="tasks"><i class="fa fa-btn fa-tasks"></i>Tasks</a></li>--}}
                 <li class="dropdown">
@@ -35,18 +36,20 @@
 
                     </ul>
                 </li><hr>
+
                 <li>
-                    <a href="contact"><i class="fa fa-btn fa-phone-square"></i>Contact</a>
-                </li><hr>
+                    <a href="/contact"><i class="fa fa-btn fa-phone-square"></i>Contact</a>
+                </li>
+                <hr>
             </ul>
                 @else
                 <ul class="nav nav-sidebar navbar-default sidebar">
                     <li>
-                        <a href="dashboard"><i class="fa fa-btn fa-dashboard"></i>Dashboard</a>
+                        <a href="/dashboard"><i class="fa fa-btn fa-dashboard"></i>Dashboard</a>
                     </li><hr>
 
                     <li>
-                        <a href="posts"><i class="fa fa-btn fa-file"></i>Posts</a>
+                        <a href="/posts"><i class="fa fa-btn fa-file"></i>Posts</a>
                     </li><hr>
 
                     <li class="dropdown">
@@ -69,11 +72,16 @@
                                 </a>
                             </li><hr>
                         </ul>
-                    </li><hr>
+                    </li>
+                    <hr>
 
                     <li>
                         <a href="/staffs"><i class="fa fa-btn fa-users"></i>Staffs</a>
                     </li><hr>
+
+                    <li>
+                        <a href="/contact"><i class="fa fa-btn fa-phone-square"></i>Contact</a>
+                    </li>
                 </ul>
                 @endif
         </div>

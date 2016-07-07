@@ -39,8 +39,27 @@
                         <textarea type="text" class="form-control" name="body">{{ $post->body }}</textarea>
                     </div>
                     <div class="button">
-                        <button type="submit" class="btn btn-success">Update</button>
+                        <button type="submit" class="btn btn-success"  data-toggle="modal" data-target="#updateSuccess">Update</button>
                         <a href="/posts/manage" class="btn btn-primary" role="button">Back</a>
+
+                        <!-- Modal -->
+                        <div id="updateSuccess" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <img src="{{ URL::to('/') }}/assets/img/check.png" width="100" height="100">
+                                        <hr>
+                                        <br><br>
+                                        <p style="text-align: center; font-size: 16pt">Your post is updated successfully</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
                     </div>
                 </form>
             </div>

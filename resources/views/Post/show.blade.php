@@ -18,7 +18,7 @@
             <div class="panel panel-default">
                 <div class="page-wrapper">
                     <h1 class="panel-heading">{{ $post->title }}</h1><hr>
-                        <div class="author">Posted by: {{ $post->users->fullname }} &nbsp;&nbsp;&nbsp;Published at: {{ $post->created_at }}</div><hr>
+                        <div class="author">Posted by: {{ $post->users->fullname }} &nbsp;&nbsp;&nbsp;Last modified: {{ date('F d, Y', strtotime($post->updated_at)) }}</div><hr>
                         <div class="cover">
                             <img class="cover-image" src="{{ URL::to('/') }}/assets/img/posts/{{ $post->images->imgName }}">
                         </div>
@@ -90,7 +90,11 @@
                         @endif
                     </li>
                         @endforeach
-                    {{--<div class="pagination"> {{ $comments->links() }} </div>--}}
+
+                    <div class="pagination">
+                        {{ $comments->links() }}
+                    </div>
+
                 </ul>
                 </form>
             </div>

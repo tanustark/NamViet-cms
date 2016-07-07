@@ -137,7 +137,6 @@ i {
     background-color: #222831;
 }
 
-
 .navbar-nav>li>a{
      color: white;
  }
@@ -238,7 +237,7 @@ tr {
 }
 
 #searchResult{
-   height: 120px;
+   height:o;
 }
 #searchResultBody{
     height: 80px;
@@ -246,4 +245,22 @@ tr {
     text-wrap: normal;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+.alert-success{
+    background-color: #5fbe6d;
+}
+
+.alert-info{
+    background-color: #2b669a;
+}
+
+#createPostButton{
+    width: 100%;
+    font-size: 15pt;
+    padding: 10px;
+}
+
+#postTitle{
+    font-weight: bold;
 }

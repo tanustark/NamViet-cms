@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Images;
 use DB;
+
 use App\Post;
 use App\User;
 use App\Comment;
-use Hamcrest\Type\IsBoolean;
+use App\Highlight;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -21,16 +22,17 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
 
-
+//Show a specific Post from All Posts
     public function show($postID){
         $post = Post::find($postID);
-        $post->load('users.comments');
+        $post->load('users');
         $post->load('images');
-        $comments = $post->comments;
+        $comments = Comment::where('post_id', '=', $post->id)->orderBy('id','desc')->paginate(5);
         return view('Post.show', compact('post', 'comments'));
-        //return $comments;
+        //return $post;
     }
 
+//Comment on a post
     public function comment(Request $request, $postID){
         $users = User::all();
         $user = Auth::user();
@@ -46,6 +48,7 @@ class PostsController extends Controller
         return back();
     }
 
+//Show index of Posts
     public function index(){
         $user=User::all();
         $posts = Post::all()->sortByDesc('id');
@@ -53,16 +56,16 @@ class PostsController extends Controller
         $posts->load('images');
         //$posts=Post::with('users.comments')->find(1);
         return view('Post.index', compact('posts', 'user'));
-
-
         //return $user;
-
     }
 
+//Create post view
     public function create(){
         return view('Post.create');
     }
 
+
+//Confirm to post a post
     public function confirmation(Request $request){
         $user = Auth::user();
 
@@ -70,50 +73,64 @@ class PostsController extends Controller
             'title' => $request->title,
             'body' => $request->body,
             'user_id' => $user->id,
+            'isAccepted' => false,
+            'isHighlight' => false
         ]);
         $posts->save();
-        $imgName = $posts->id . '.' .'jpg';
-        $path = base_path() . '/public/assets/img/posts/';
-        $request->file('image_file')->move($path, $imgName);
-        $cover_image = new Images ([
-            'imgName' => $imgName,
-            'post_id' => $posts->id,
-        ]);
-        $cover_image->save();
+        if($request->file('image_file') != null){
+            $imgName = $posts->id . '.' .'jpg';
+            $path = base_path() . '/public/assets/img/posts/';
+            $request->file('image_file')->move($path, $imgName);
+            $cover_image = new Images ([
+                'imgName' => $imgName,
+                'post_id' => $posts->id,
+            ]);
+            $cover_image->save();
+        }
+
         return view('Post.confirmation');
     }
 
+
+//Manage post view
     public function manage(){
-        $user=User::all();
-        $posts = Post::all()->sortByDesc('id');
-        //$posts->load('users.comments');
-        $user->load('posts.comments');
-        $posts->load('users');//must bind user who logged
-        $posts->load('images');
-        return view('Post.manage', compact('posts', 'user'));
+        $posts = Post::all()->sortByDesc('updated_at');
+        $posts->load('users');
+        return view('Post.manage', compact('posts'));
+        //return $posts;
     }
 
+
+//Confirm when upload edit version of a post
     public function editConfirm()
     {
         return view('Post.edit-confirm');
     }
 
+
+//Edit post view
     public function edit($postID){
         $post = Post::find($postID);
         $post->load('images');
         return view('Post.edit', compact('post'));
     }
 
+
+//Update a post
     public function update(Request $request, Post $post, $postID){
 
         $imgName = $postID . '.' .'jpg';
         $path = base_path() . '/public/assets/img/posts/';
-        $request->file('image_file')->move($path, $imgName);
-        $cover_image = new Images ([
-            'imgName' => $imgName,
-            'post_id' => $postID,
-        ]);
-        $cover_image->save();
+        if ($request->file('image_file' != null)){
+            $request->file('image_file')->move($path, $imgName);
+            $cover_image = new Images ([
+                'imgName' => $imgName,
+                'post_id' => $postID,
+            ]);
+            $cover_image->save();
+            return back();
+        }
+
 
         $post=Post::find($postID);
         $post->title = $request->title;
@@ -125,6 +142,8 @@ class PostsController extends Controller
 
     }
 
+
+//Delete a post
     public function delete($postID){
         $post=Post::find($postID);
         $post->delete();
@@ -134,15 +153,17 @@ class PostsController extends Controller
     public function myposts()
     {
         $user = Auth::user();
-        $posts = DB::table('posts')->where('user_id', $user->id)->orderBy('id','desc')->get();
+        $posts = DB::table('posts')->where('user_id', $user->id)->orderBy('updated_at','desc')->get();
         return view('Post.my-post', compact('posts','user'));
     }
 
+
+//Show a specfic post from My Posts
     public function showmypost($postID){
         $user=Auth::user();
         $post = Post::find($postID);
         $post->load('images');
-        $comments = Comment::paginate(5);
+        $comments = Comment::where('post_id', '=', $post->id)->orderBy('id','desc')->paginate(5);
         return view('Post.showmypost', compact('post','user','comments'));
     }
 
@@ -152,18 +173,68 @@ class PostsController extends Controller
         return view('Post.editmypost', compact('post'));
     }
 
+
+//Update a post from My Posts
     public function updatemypost(Request $request, $postID){
         $post = Post::find($postID);
         $post->title = $request->title;
         $post->body = $request->body;
         $post->save();
-//Replace old cover image
-        $imgName = $post->id . '.' .'jpg';
-        $path = base_path() . '/public/assets/img/posts/';
-        $request->file('image_file')->move($path, $imgName);
-        $cover_image = Images::find($post->images->id);
-        $cover_image->save();
 
+//Replace old cover image
+        if($request->file('image_file') != null){
+            $imgName = $post->id . '.' .'jpg';
+            $path = base_path() . '/public/assets/img/posts/';
+            $request->file('image_file')->move($path, $imgName);
+            $cover_image = Images::find($post->images->id);
+            $cover_image->save();
+        }
         return view('Post.confirmation');
+    }
+
+
+//Admin accept a post to be published to main site
+    public function acceptToMainSite($postID){
+        $post=Post::find($postID);
+        $post->isAccepted = true;
+        $post->save();
+        return back();
+    }
+
+//Admin remove a post from main site
+    public function removeFromMainSite($postID){
+        $post = Post::find($postID);
+        $post->isAccepted = false;
+        $post->isHighlighted = false;
+        $post->save();
+        return back();
+    }
+
+//Admin make a post highlight
+    public function makeHighlight($postID){
+
+        //Have 3 highlights, delete the last when a new one added
+        $posts = Post::all();
+        $olds = $posts->filter(function ($posts){
+            return ($posts->isHighlighted);
+        });
+        foreach ($olds as $old){
+            $old->isHighlighted = false;
+            $old->save();
+        }
+
+        $post = Post::find($postID);
+        $post->isHighlighted = true;
+        $post->save();
+        $post->load('users');
+        $highlight = new Highlight([
+            'title' => $post->title,
+            'body' => $post->body,
+            'author' => $post->users->fullname,
+            'updatedAt' => $post->updated_at
+        ]);
+        $highlight->save();
+        return back();
+        //return $olds;
     }
 }

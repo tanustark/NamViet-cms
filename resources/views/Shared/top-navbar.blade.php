@@ -10,8 +10,8 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" style="color: white" href="{{ url('/') }}">
-                Nam Viet CMS
+            <a class="navbar-brand" style="color: white" href="{{ url('/dashboard') }}">
+                Blavity CMS
             </a>
         </div>
 
@@ -52,7 +52,7 @@
                     </li>
                 @else
                     <li>
-                        <a href="site">Site</a>
+                        <a href="/site">Site</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle"

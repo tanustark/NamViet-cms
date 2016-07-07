@@ -28,7 +28,7 @@
                 {{--Post section--}}
 
                 <h1 class="panel-heading">{{ $post->title }}</h1><hr>
-                <div class="author">Posted by: {{ $post->users->fullname }} &nbsp;&nbsp;&nbsp;Published at: {{ $post->created_at }}</div><hr>
+                <div class="author">Posted by: {{ $post->users->fullname }} &nbsp;&nbsp;&nbsp;Last Modified: {{ date('F d, Y', strtotime($post->updated_at)) }}</div><hr>
                 <div class="cover">
                     <img class="cover-image" src="{{ URL::to('/') }}/assets/img/posts/{{ $post->images->imgName }}">
                 </div>

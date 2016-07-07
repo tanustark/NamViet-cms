@@ -17,6 +17,8 @@ class CreatePostTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->string('title');
             $table->text('body');
+            $table->boolean('isAccepted');
+            $table->boolean('isHighlighted');
             $table->timestamps();
         });
         Schema::table('posts', function (Blueprint $table){

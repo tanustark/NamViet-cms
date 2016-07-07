@@ -35,9 +35,13 @@ Route::group(['prefix' => 'posts'], function(){
     Route::get('myposts', 'PostsController@myposts');
     Route::get('myposts/{postID}', 'PostsController@showmypost');
     Route::get('myposts/edit/{postID}', 'PostsController@editmypost');
-    Route::get('myposts/{postID}/update', 'PostsController@updatemypost');
+    Route::post('myposts/{postID}/update', 'PostsController@updatemypost');
     Route::get('{postID}', 'PostsController@show');
     Route::post('{postID}/comment', 'PostsController@comment');
+    Route::get('publish/{postID}', 'PostsController@acceptToMainSite');
+    Route::get('remove/{postID}', 'PostsController@removeFromMainSite');
+    Route::get('highlight/{postID}', 'PostsController@makeHighlight');
+    Route::get('unhighlight/{postID}', 'PostsController@unHighlight');
 });
 
 Route::auth();
@@ -71,5 +75,6 @@ Route::get('/search', 'SearchController@search');
 Route::group(['prefix' => 'site'], function(){
     Route::get('/', 'SiteController@index');
     Route::get('/posts/{postID}', 'SiteController@show');
+    Route::get('/search', 'SiteController@search');
 });
 
